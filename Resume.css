@@ -1,0 +1,411 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Josefin Slab', serif;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background: #a19a8f;
+  overflow: hidden;
+}
+
+main {
+  height: 100%;
+  width: 100vw;
+  display: flex;
+  overflow: hidden;
+}
+
+section {
+  width: 120vw;
+  
+  font-size: 6em;
+  line-height: 1em;
+  background: #a19a8f;
+}
+
+.wrap {
+  display: flex;
+  height: 100%;
+}
+
+.section {
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: -200px;
+}
+
+.section img {
+  width: 100%;
+  height: 100%;
+   /* This will cover the entire area, possibly cropping the image */
+}
+.blocks {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  pointer-events: none;
+}
+
+.block {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4rem;
+  height: 100%;
+  background: transparent;
+  z-index: 100;
+  padding: 2rem 1.25rem;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+
+  pointer-events: auto;
+  cursor: pointer;
+  border-left: 0.2rem solid #000;
+  font-weight: 500;
+}
+
+.block[data-block-section="2"].init {
+  left: calc(100vw - 16rem);
+}
+
+.block[data-block-section="2"].fixed {
+  left: 4rem;
+  border-left: 0.2rem solid #000;
+}
+
+.block[data-block-section="3"].init {
+  left: calc(100vw - 12rem);
+}
+
+.block[data-block-section="3"].fixed {
+  left: 8rem;
+}
+
+.block[data-block-section="4"].init {
+  left: calc(100vw - 8rem);
+}
+
+.block[data-block-section="4"].fixed {
+  left: 12rem;
+}
+
+.block[data-block-section="5"].init {
+  left: calc(100vw - 4rem);
+}
+
+.block[data-block-section="5"].fixed {
+  left: 16rem;
+}
+
+.block__title,.block__number {
+  position: relative;
+  white-space: nowrap;
+  transform: rotate(-90deg) translate(-50%);
+  text-align: right;
+  color: #000;
+  text-transform: uppercase;
+  font-size: 2rem;
+  line-height: 1.06rem;
+}
+
+.block__number
+ {
+  top:-13%;
+  color: #fff;
+}
+
+
+#rotatingImage {
+  z-index: 1000;
+  position: fixed;
+  bottom: 20vh; /* Adjust as needed */
+  left: 50%;
+  width: 6%;
+  transform: translateX(-50%);
+  }
+
+  .welcome{
+    position:fixed;
+    z-index: 4;
+    top:-50px;
+    left:250px;
+    width: 40vh;
+  }
+
+.welcome img {
+    transform-origin: top center;
+    transition: transform 0.8s ease-in-out;
+}
+
+@keyframes swing {
+    0%, 100% { transform: rotate(-10deg); }
+    50% { transform: rotate(10deg); }
+}
+
+.welcome:hover img {
+    animation: swing 1s ease-in-out infinite;
+}
+
+
+.college, .work1,.work2, .freelance, .skills {
+    justify-content: center;
+    align-items: center;
+    background-color: #706747;
+    position: absolute;
+    width: 22vw;
+    bottom: -16px;
+    text-transform: uppercase;
+    height: 150px;
+    z-index: 1;
+    border: 1px solid rgba(255,255,255,.12);
+    box-shadow: -2px 2px 4px rgba(0,0,0,.1), -1px 1px 6px rgba(0,0,0,.1), -3px 3px 6px rgba(0,0,0,.1);
+    margin: 40px;
+    color: #fff; /* Text color white */
+    text-align: center; /* Centered text */
+    font-weight: 700;
+    font-size: 1.5rem;
+    border-radius: 15px; /* Rounded corners, adjust as needed */
+    line-height: 1.5; /* Adjust the gap between lines, 2 is double the normal */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+}
+
+.college{
+left: 6vw;
+}
+
+.work1{
+left: 30vw;
+}
+
+.work2{
+left: 82vw;
+}
+
+.freelance{
+left: 2vw;
+}
+
+.skills{
+  left: 50vw;
+  background-color: black; 
+  width: 6vw;
+}
+
+
+.exp1, .exp2,.exp3,.exp4, .exp5, .exp6,.exp7,.exp8 ,.exp9,.exp10,.exp11,.exp12 {
+  text-transform: uppercase;
+justify-content: center;
+    align-items: center;
+    background-color: #a49382;
+    position: absolute;
+    width: 150px;
+    bottom: 21px;
+     transform: rotate(-90deg); /* Rotate the text 90 degrees */
+    transform-origin: center;
+    height: 4vw;
+    z-index: 1;
+    border: 1px solid rgba(255,255,255,.12);
+    box-shadow: -2px 2px 4px rgba(0,0,0,.1), -1px 1px 6px rgba(0,0,0,.1), -3px 3px 6px rgba(0,0,0,.1);
+    margin: 40px;
+    color: #fff; /* Text color white */
+    text-align: center; /* Centered text */
+    font-weight: 700;
+    font-size: 1.2rem;
+    border-radius: 15px; /* Rounded corners, adjust as needed */
+    line-height: 1.5; /* Adjust the gap between lines, 2 is double the normal */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+}
+
+
+.exp1{
+  left: 52vw;
+}
+
+.exp2{
+  left: 58vw;
+}
+.exp3{
+  left: 64vw;
+}
+.exp4{
+  left: 70vw;
+}
+.exp5{
+  left: 106vw;
+}
+
+.exp6{
+  left: 24vw;
+}
+
+.exp7{
+  left: 30vw;
+}
+.exp8{
+  left: 36vw;
+}
+
+
+.exp9{
+  left: 63vw;
+}
+
+.exp10{
+  left: 76vw;
+}
+
+.exp11{
+  left: 88vw;
+}
+
+.exp12{
+  left: 100vw;
+}
+
+#pop-first{
+position: absolute;
+width: 8%;
+height: auto;
+top: 4%;
+left: 50%;
+z-index:5;
+transition: opacity 0.8s ease, transform 0.8s ease;
+opacity: 1;
+transform: translateX(-300%);
+}
+
+.experience {
+  position: absolute;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  opacity: 0;
+  transform: scale(0.95);
+  bottom:28%;
+  width:6%;
+}
+
+.villaImage { left: 20%; }
+.transitImage { left: 37%; }
+.metroImage { left: 55%; }
+.interiorImage { left: 68%; }
+.retailImage { left: 86%; }
+.interiorImage { left: 30%; }
+.villaImage2 { left: 50%; }
+.homestayImage { left: 68%; }
+
+
+
+#share1, #share2, #share3, #share4, #share5  { 
+ 
+height:auto;
+ }
+
+#share1{
+    width: 20vw;
+}
+
+#share2{
+    width: 22vw;
+    bottom:18%;
+}
+
+#share3{
+    width: 18vw;
+    bottom:25%;
+}
+
+#share4{
+    width: 10vw;
+    bottom:28%;
+}
+
+#share5{
+    width: 10vw;
+    bottom:28%;
+}
+
+
+
+/*............skills......*/
+
+.skills-section {
+  position: relative; /* For positioning skill grid */
+  /* Other styles */
+}
+
+.skills-grid {
+  position: absolute;
+  bottom: 22%; /* Position above 20% of the screen */
+  right: 0;
+  width: 60%; /* Adjust as needed */
+  display: flex;
+  align-items: flex-end; /* Align items to the bottom */
+}
+
+.skill-levels {
+  font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-right: 10px; /* Spacing between text and grid */
+  color: white; /* White text */
+  
+}
+
+.skill-levels div {
+  background-color: #333;
+  padding: 2px;
+  margin: 2px
+  flex: 1;
+  border-bottom: 1px dotted white; /* Dotted line for skill levels */
+  margin-bottom: 40px;
+}
+
+.skill-categories {
+  display: flex;
+  width: 100%;
+}
+
+.skill-category {
+  flex: 1;
+  text-align: center;
+  position: relative;
+  height: 90vh;
+}
+
+.skill-category span {
+
+  position: absolute;
+  bottom: 100%; /* Position label above the line */
+  width: 100%;
+  color: white;
+}
+
+
+.image-container {
+  position: relative; /* Container for the image */
+  height: 100%; /* Full height of the skill category */
+}
+
+.spaceneedle-image {
+  position: absolute;
+  bottom: 0; /* Align to the bottom */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Adjust for center alignment */
+  height: auto; /* Adjust height as per inline style */
+  max-height: 100%; /* Ensure it doesn't exceed the container */
+}
+
